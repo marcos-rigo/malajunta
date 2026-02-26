@@ -46,7 +46,6 @@ export interface Sponsor {
   id: number
   name: string
   logo: string
-  url: string
   tier: "Principal" | "Sponsor" | "Partner"
 }
 
@@ -443,65 +442,98 @@ export const news: NewsItem[] = [
 export const sponsors: Sponsor[] = [
   {
     id: 1,
-    name: "Educacion 24",
-    logo: "/placeholder.svg?height=80&width=160",
-    url: "https://example.com/educacion24",
+    name: "Educación 24",
+    logo: "/images/sponsors/e24.png",
     tier: "Principal",
   },
   {
     id: 2,
-    name: "Group Sports",
-    logo: "/placeholder.svg?height=80&width=160",
-    url: "https://example.com/groupsports",
+    name: "FV Group SRL",
+    logo: "/images/sponsors/fv-blanco-01.png",
     tier: "Principal",
   },
   {
     id: 3,
-    name: "Tucuman Deportes",
-    logo: "/placeholder.svg?height=60&width=120",
-    url: "https://example.com/tucumandeportes",
+    name: "Kavak Deportes",
+    logo: "/images/sponsors/KAVAK-PNG-01.png",
     tier: "Sponsor",
   },
   {
     id: 4,
-    name: "El Bajo Indumentaria",
-    logo: "/placeholder.svg?height=60&width=120",
-    url: "https://example.com/elbajo",
+    name: "Envanor",
+    logo: "/images/sponsors/ENVANOR-PNG-01.png",
     tier: "Sponsor",
   },
   {
     id: 5,
-    name: "Norte Fitness",
-    logo: "/placeholder.svg?height=60&width=120",
-    url: "https://example.com/nortefitness",
+    name: "Inguz Centro de Entrenamiento",
+    logo: "/images/sponsors/1.png",
     tier: "Sponsor",
   },
   {
     id: 6,
-    name: "Panaderia Don Jose",
-    logo: "/placeholder.svg?height=50&width=100",
-    url: "https://example.com/donjose",
+    name: "Farmacia del Cerro",
+    logo: "/images/sponsors/ddelcerro.png",
     tier: "Partner",
   },
   {
     id: 7,
-    name: "Barberia Central",
-    logo: "/placeholder.svg?height=50&width=100",
-    url: "https://example.com/barberiacentral",
+    name: "Locos x el Fútbol",
+    logo: "/images/sponsors/locos-x-el-f-01.png",
     tier: "Partner",
   },
   {
     id: 8,
-    name: "Kiosco El Amigo",
-    logo: "/placeholder.svg?height=50&width=100",
-    url: "https://example.com/kioscoamigo",
+    name: "Máximo Café de Encuentro",
+    logo: "/images/sponsors/Logo-MAxiMO---Blanco.png",
     tier: "Partner",
   },
   {
     id: 9,
-    name: "Cerrajeria Rapida",
-    logo: "/placeholder.svg?height=50&width=100",
-    url: "https://example.com/cerrajeria",
+    name: "Carlitos Repuestos",
+    logo: "/images/sponsors/Logo-negro-con-borde-blanco.png",
+    tier: "Partner",
+  },
+  {
+    id: 10,
+    name: "LLASAC",
+    logo: "/images/sponsors/LLASAC-PNG-01.png",
+    tier: "Partner",
+  },
+  {
+    id: 11,
+    name: "Palpitos",
+    logo: "/images/sponsors/LOGO-PALPITOS-1.png",
+    tier: "Partner",
+  },
+  {
+    id: 12,
+    name: "OPS Cars",
+    logo: "/images/sponsors/ops.png",
+    tier: "Partner",
+  },
+  {
+    id: 13,
+    name: "Quick Market",
+    logo: "/images/sponsors/quick.png",
+    tier: "Partner",
+  },
+  {
+    id: 14,
+    name: "Segenem",
+    logo: "/images/sponsors/SEGENEM-01.png",
+    tier: "Partner",
+  },
+  {
+    id: 15,
+    name: "Fríos del Norte",
+    logo: "/images/sponsors/fdnorte.png",
+    tier: "Partner",
+  },
+  {
+    id: 16,
+    name: "Balverde",
+    logo: "/images/sponsors/BALVERDE-01.png",
     tier: "Partner",
   },
 ]
@@ -519,31 +551,18 @@ export const gallery: GalleryImage[] = [
 ]
 
 // ---------- SOCIAL POSTS (mock) ----------
+// ✏️ ACTUALIZAR: cambiar image y content cuando publiques algo nuevo (fecha y likes eliminados)
 export const socialPosts = [
-  {
+ {
     id: 1,
     platform: "Instagram",
-    content: "RENOVACION CONFIRMADA. Cucho sigue en Mala Junta! Temporada 2026 con todo.",
+    content: "Lista de Buena Fe confirmada! Plantel F7 +30 para el Apertura 26. Vamos Mala Junta!",
     date: "2026-02-09",
     likes: 248,
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-02-09%20at%2023.30.08-x3xdtrHvdbBf9EihVXIaK1HYJqPGjQ.jpeg",
+    image: "/images/post/post1.jpeg",
+    url: "https://www.instagram.com/p/DVNNd88gJ9C/",
   },
-  {
-    id: 2,
-    platform: "Instagram",
-    content: "4-0 ante Real Tucuman! Noche magica en El Bajo. Mala Junta no para!",
-    date: "2026-02-02",
-    likes: 312,
-    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&h=400&fit=crop",
-  },
-  {
-    id: 3,
-    platform: "TikTok",
-    content: "El gol de Cucho que todos hablan. Definicion de crack puro.",
-    date: "2026-01-28",
-    likes: 1520,
-    image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=400&h=400&fit=crop",
-  },
+
 ]
 
 // ---------- SPONSORSHIP PACKAGES ----------
@@ -593,10 +612,10 @@ export const sponsorPackages = [
 export const navLinks = [
   { label: "Inicio", href: "#inicio" },
   { label: "Equipo", href: "#equipo" },
-  { label: "Fixture", href: "#fixture" },
-  { label: "Resultados", href: "#resultados" },
-  { label: "Noticias", href: "#noticias" },
+  // { label: "Fixture", href: "#fixture" },
+  // { label: "Resultados", href: "#resultados" },
+  // { label: "Noticias", href: "#noticias" },
   { label: "Sponsors", href: "#sponsors" },
-  { label: "Galeria", href: "#galeria" },
-  { label: "Contacto", href: "#contacto" },
+  // { label: "Galeria", href: "#galeria" },
+  // { label: "Contacto", href: "#contacto" },
 ]

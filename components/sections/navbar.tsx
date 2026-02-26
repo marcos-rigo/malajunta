@@ -10,6 +10,7 @@ import Image from "next/image"
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [showSponsorModal, setShowSponsorModal] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -24,6 +25,7 @@ export function Navbar() {
   }
 
   return (
+    <>
     <nav
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
@@ -68,7 +70,7 @@ export function Navbar() {
             </a>
           ))}
           <Button
-            onClick={() => handleNavClick("#sponsors")}
+            onClick={() => setShowSponsorModal(true)}
             className="bg-neon text-carbon font-display tracking-wider hover:bg-neon-dark"
           >
             QUIERO SER SPONSOR
@@ -112,7 +114,7 @@ export function Navbar() {
                 </motion.a>
               ))}
               <Button
-                onClick={() => handleNavClick("#sponsors")}
+                onClick={() => setShowSponsorModal(true)}
                 className="mt-3 bg-neon text-carbon font-display tracking-wider hover:bg-neon-dark"
               >
                 QUIERO SER SPONSOR
@@ -122,5 +124,22 @@ export function Navbar() {
         )}
       </AnimatePresence>
     </nav>
+
+      {/* Sponsor modal */}
+      {showSponsorModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+          <div className="rounded-lg bg-card p-6 text-center shadow-lg">
+            <h3 className="mb-4 text-xl font-display">Quiero ser sponsor</h3>
+            <p className="mb-6 text-lg">Contáctanos al <strong>3814163584</strong></p>
+            <Button
+              onClick={() => setShowSponsorModal(false)}
+              className="bg-neon text-carbon font-display tracking-wider hover:bg-neon-dark"
+            >
+              CERRAR
+            </Button>
+          </div>
+        </div>
+      )}
+    </>
   )
 }

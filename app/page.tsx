@@ -58,7 +58,7 @@ export default function Home() {
         <div className="h-px bg-gradient-to-r from-transparent via-neon/30 to-transparent" />
       </div>
 
-      <Gallery />
+      {/*<Gallery />*/}
 
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="h-px bg-gradient-to-r from-transparent via-magenta/30 to-transparent" />
@@ -70,8 +70,8 @@ export default function Home() {
         <div className="h-px bg-gradient-to-r from-transparent via-neon/30 to-transparent" />
       </div>
 
-      <Contact />
-      <Footer />
+      {/*<Contact />*/}
+      {/*<Footer />*/}
     </main>
   )
 }

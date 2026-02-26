@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter, Bebas_Neue } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { Toaster } from '@/components/ui/sonner'
+import Script from 'next/script'
 import './globals.css'
 
 const inter = Inter({
@@ -47,6 +48,10 @@ export default function RootLayout({
         {children}
         <Toaster />
         <Analytics />
+        <Script
+          src="https://www.instagram.com/embed.js"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   )
