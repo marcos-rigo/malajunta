@@ -1,0 +1,186 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #0B0B0D;
+  --foreground: #FFFFFF;
+  --card: #111114;
+  --card-foreground: #FFFFFF;
+  --popover: #111114;
+  --popover-foreground: #FFFFFF;
+  --primary: #20E000;
+  --primary-foreground: #0B0B0D;
+  --secondary: #1a1a1f;
+  --secondary-foreground: #FFFFFF;
+  --muted: #1a1a1f;
+  --muted-foreground: #A9A9A9;
+  --accent: #FFD400;
+  --accent-foreground: #0B0B0D;
+  --destructive: #FF2DB2;
+  --destructive-foreground: #FFFFFF;
+  --border: #20E00030;
+  --input: #1a1a1f;
+  --ring: #20E000;
+  --chart-1: #20E000;
+  --chart-2: #0FAE00;
+  --chart-3: #FFD400;
+  --chart-4: #FF2DB2;
+  --chart-5: #A9A9A9;
+  --radius: 0.5rem;
+  --neon-green: #20E000;
+  --neon-green-dark: #0FAE00;
+  --yellow: #FFD400;
+  --magenta: #FF2DB2;
+  --smoke: #A9A9A9;
+  --carbon: #0B0B0D;
+}
+
+.dark {
+  --background: #0B0B0D;
+  --foreground: #FFFFFF;
+  --card: #111114;
+  --card-foreground: #FFFFFF;
+  --popover: #111114;
+  --popover-foreground: #FFFFFF;
+  --primary: #20E000;
+  --primary-foreground: #0B0B0D;
+  --secondary: #1a1a1f;
+  --secondary-foreground: #FFFFFF;
+  --muted: #1a1a1f;
+  --muted-foreground: #A9A9A9;
+  --accent: #FFD400;
+  --accent-foreground: #0B0B0D;
+  --destructive: #FF2DB2;
+  --destructive-foreground: #FFFFFF;
+  --border: #20E00030;
+  --input: #1a1a1f;
+  --ring: #20E000;
+  --chart-1: #20E000;
+  --chart-2: #0FAE00;
+  --chart-3: #FFD400;
+  --chart-4: #FF2DB2;
+  --chart-5: #A9A9A9;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+  --font-display: var(--font-bebas), 'Bebas Neue', Impact, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-neon: var(--neon-green);
+  --color-neon-dark: var(--neon-green-dark);
+  --color-yellow: var(--yellow);
+  --color-magenta: var(--magenta);
+  --color-smoke: var(--smoke);
+  --color-carbon: var(--carbon);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Noise/grain texture overlay */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* Splatter decorative elements */
+.splatter::before {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #20E00025 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+/* Section heading style */
+.section-heading {
+  font-family: var(--font-bebas), 'Bebas Neue', Impact, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+/* Glow effect */
+.glow-green {
+  box-shadow: 0 0 15px #20E00040, 0 0 30px #20E00020;
+}
+
+.glow-green-text {
+  text-shadow: 0 0 20px #20E00060, 0 0 40px #20E00030;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0B0D;
+}
+::-webkit-scrollbar-thumb {
+  background: #20E00040;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #20E00080;
+}
+
+/* Selection color */
+::selection {
+  background: #20E00040;
+  color: #FFFFFF;
+}
