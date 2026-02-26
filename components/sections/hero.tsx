@@ -120,13 +120,13 @@ export function Hero() {
           transition={{ delay: 0.7 }}
           className="flex flex-wrap justify-center gap-4"
         >
-          <Button
+          {/* <Button
             size="lg"
             onClick={() => handleScroll("#fixture")}
             className="bg-neon text-carbon font-display text-lg tracking-wider hover:bg-neon-dark glow-green"
           >
             VER FIXTURE <ChevronRight className="ml-1 h-5 w-5" />
-          </Button>
+          </Button> */}
           <Button
             size="lg"
             variant="outline"
