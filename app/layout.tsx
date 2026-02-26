@@ -22,6 +22,20 @@ export const metadata: Metadata = {
   description:
     'Mala Junta es un equipo de futbol amateur de Tucuman, Argentina. Pasion, amistad y competencia en cada partido. Temporada 2026.',
   keywords: ['futbol amateur', 'Mala Junta', 'Tucuman', 'futbol', 'liga amateur', 'sponsors'],
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180' },
+    ],
+    other: [
+      { url: '/favicon-192x192.png', sizes: '192x192' },
+      { url: '/favicon-512x512.png', sizes: '512x512' },
+    ],
+  },
   openGraph: {
     title: 'Mala Junta FC',
     description: 'Futbol, Amistad y Competencia - Temporada 2026',
