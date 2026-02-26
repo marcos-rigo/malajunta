@@ -20,8 +20,10 @@ export function Navbar() {
 
   const handleNavClick = (href: string) => {
     setIsOpen(false)
-    const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: "smooth" })
+    setTimeout(() => {
+      const el = document.querySelector(href)
+      if (el) el.scrollIntoView({ behavior: "smooth" })
+    }, 200)
   }
 
   return (
