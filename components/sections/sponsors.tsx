@@ -48,11 +48,11 @@ export function Sponsors() {
 
   // Sponsors 2026: Educación 24, FV Group, Farmacia del Cerro
   const actuales = sponsors.filter((s) =>
-    [1, 2, 6].includes(s.id) // Educación 24, FV Group SRL, Farmacia del Cerro
+    [1, 2, 6,17].includes(s.id) // Educación 24, FV Group SRL, Farmacia del Cerro
   )
 
   // Todos los demás
-  const anteriores = sponsors.filter((s) => ![1, 2, 6].includes(s.id))
+  const anteriores = sponsors.filter((s) => ![1, 2, 6,17].includes(s.id))
 
   return (
     <section id="sponsors" className="relative overflow-hidden py-20 lg:py-32">

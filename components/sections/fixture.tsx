@@ -7,14 +7,35 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { fixture } from "@/lib/mock-data"
 
-const months = ["Todos", ...Array.from(new Set(fixture.map((m) => m.month)))]
+// Only show months between March and July (inclusive). We'll keep this list
+// fixed instead of deriving it from the data so that past months like Enero/Febrero
+// don't appear in the selector.
+// Start with the normal range but include February if there are any upcoming
+// matches there (e.g. el partido contra Chernobyl que es mañana).
+const allowedMonths = [
+  "Febrero",
+  "Marzo",
+  "Abril",
+  "Mayo",
+  "Junio",
+  "Julio",
+]
+const months = ["Todos", ...allowedMonths]
 
 export function Fixture() {
   const [monthFilter, setMonthFilter] = useState("Todos")
 
+  // When "Todos" is selected we still want to enforce the March–July window so
+  // fixtures outside that range are ignored.  This keeps earlier months from
+  // sneaking in if the data contains them.
   const upcomingMatches = fixture
     .filter((m) => m.status === "Proximo")
-    .filter((m) => monthFilter === "Todos" || m.month === monthFilter)
+    .filter((m) => {
+      if (monthFilter === "Todos") {
+        return allowedMonths.includes(m.month)
+      }
+      return m.month === monthFilter
+    })
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
 
   const formatDate = (d: string) => {
