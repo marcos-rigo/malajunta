@@ -289,7 +289,7 @@ export const fixture: FixtureMatch[] = [
     time: "13:15",
     rival: "Chernobyl",
     condition: "Local",
-    venue: "Cancha El Bajo",
+    venue: "2 - Jockey",
     status: "Proximo",
     month: "Febrero",
   },
@@ -604,7 +604,13 @@ export const sponsors: Sponsor[] = [
   {
     id: 17,
     name: "Tucumán Aventura",
-    logo: "/images/sponsors/tucumana.svg",
+    logo: "/images/sponsors/tucumana.png",
+    tier: "Principal",
+  },
+  {
+    id: 18,
+    name: "Pistón Club Tucumán",
+    logo: "/images/sponsors/piston.png",
     tier: "Principal",
   },
 ]
@@ -683,7 +689,7 @@ export const sponsorPackages = [
 export const navLinks = [
   { label: "Inicio", href: "#inicio" },
   { label: "Equipo", href: "#equipo" },
-  // { label: "Fixture", href: "#fixture" },
+  { label: "Fixture", href: "#fixture" },
   // { label: "Resultados", href: "#resultados" },
   // { label: "Noticias", href: "#noticias" },
   { label: "Sponsors", href: "#sponsors" },

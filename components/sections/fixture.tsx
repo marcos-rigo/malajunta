@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { CalendarDays, MapPin, Clock, CalendarPlus } from "lucide-react"
+import { CalendarDays, MapPin, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { fixture } from "@/lib/mock-data"
@@ -89,7 +89,7 @@ export function Fixture() {
                   <th className="px-6 py-4 text-left font-display text-xs tracking-[0.2em] text-muted-foreground">CONDICION</th>
                   <th className="px-6 py-4 text-left font-display text-xs tracking-[0.2em] text-muted-foreground">HORA</th>
                   <th className="px-6 py-4 text-left font-display text-xs tracking-[0.2em] text-muted-foreground">CANCHA</th>
-                  <th className="px-6 py-4 text-right font-display text-xs tracking-[0.2em] text-muted-foreground">ACCION</th>
+
                 </tr>
               </thead>
               <tbody>
@@ -135,11 +135,7 @@ export function Fixture() {
                         {match.venue}
                       </div>
                     </td>
-                    <td className="px-6 py-4 text-right">
-                      <Button variant="ghost" size="sm" className="text-neon hover:text-neon hover:bg-neon/10">
-                        <CalendarPlus className="mr-1 h-4 w-4" /> Agendar
-                      </Button>
-                    </td>
+
                   </motion.tr>
                 ))}
               </tbody>
@@ -192,9 +188,9 @@ export function Fixture() {
                 </span>
               </div>
 
-              <Button variant="ghost" size="sm" className="w-full text-neon hover:text-neon hover:bg-neon/10">
+              {/* <Button variant="ghost" size="sm" className="w-full text-neon hover:text-neon hover:bg-neon/10">
                 <CalendarPlus className="mr-1 h-4 w-4" /> Agregar al calendario
-              </Button>
+              </Button> */}
             </motion.div>
           ))}
         </div>

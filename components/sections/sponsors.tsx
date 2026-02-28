@@ -11,14 +11,19 @@ function SponsorLogo({ sponsor }: { sponsor: (typeof sponsors)[0] }) {
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
-      className="flex flex-col items-center justify-center gap-3 rounded-lg border border-foreground/20 bg-card/50 p-6 transition-all duration-300 hover:shadow-[0_0_20px_rgba(32,224,0,0.1)]"
+      className="flex flex-col items-center justify-center gap-3 rounded-xl border border-white/10 bg-white/[0.06] p-6 backdrop-blur-sm transition-all duration-300 hover:border-neon/30 hover:bg-white/[0.10] hover:shadow-[0_0_24px_rgba(32,224,0,0.12)]"
     >
       <div className="relative h-12 w-24">
         <Image
           src={sponsor.logo}
           alt={sponsor.name}
           fill
-          className="object-contain opacity-70 transition-opacity duration-300 hover:opacity-100"
+          className={[
+            "object-contain transition-all duration-300",
+            (sponsor as any).darkLogo
+              ? "invert opacity-70 hover:opacity-100"
+              : "opacity-70 hover:opacity-100",
+          ].join(" ")}
           sizes="96px"
         />
       </div>
@@ -46,13 +51,8 @@ export function Sponsors() {
     }
   }
 
-  // Sponsors 2026: Educación 24, FV Group, Farmacia del Cerro
-  const actuales = sponsors.filter((s) =>
-    [1, 2, 6,17].includes(s.id) // Educación 24, FV Group SRL, Farmacia del Cerro
-  )
-
-  // Todos los demás
-  const anteriores = sponsors.filter((s) => ![1, 2, 6,17].includes(s.id))
+  const actuales = sponsors.filter((s) => [1, 2, 6, 17, 18].includes(s.id))
+  const anteriores = sponsors.filter((s) => ![1, 2, 6, 17, 18].includes(s.id))
 
   return (
     <section id="sponsors" className="relative overflow-hidden py-20 lg:py-32">
@@ -107,7 +107,6 @@ export function Sponsors() {
             ))}
           </div>
         </motion.div>
-        
       </div>
     </section>
   )
