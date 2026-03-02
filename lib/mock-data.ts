@@ -551,7 +551,13 @@ export const sponsors: Sponsor[] = [
   {
     id: 17,
     name: "Tucumán Aventura",
-    logo: "/images/sponsors/tucumana.svg",
+    logo: "/images/sponsors/tucumana.png",
+    tier: "Principal",
+  },
+  {
+    id: 18,
+    name: "Pistón Club Tucumán",
+    logo: "/images/sponsors/piston.png",
     tier: "Principal",
   },
 ]
