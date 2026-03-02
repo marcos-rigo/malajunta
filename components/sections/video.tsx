@@ -6,7 +6,8 @@ import { AspectRatio } from "@/components/ui/aspect-ratio"
 // Simple video section with a hardcoded YouTube ID.  You can change the
 // constant or modify the component to accept a prop if you want to embed
 // different matches.
-const YOUTUBE_ID = "dQw4w9WgXcQ" // replace with actual match video ID
+const YOUTUBE_ID_1 = "5Z4kbotoLs0"
+const YOUTUBE_ID_2 = "EbmncY5v4XI"
 
 export function Video() {
   return (
@@ -23,16 +24,29 @@ export function Video() {
           <div className="mx-auto mt-4 h-1 w-20 bg-neon" />
         </motion.div>
 
-        <AspectRatio ratio={16 / 9} className="w-full">
-          <iframe
-            src={`https://www.youtube.com/embed/${YOUTUBE_ID}`}
-            title="Grabación del partido"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="w-full h-full"
-          />
-        </AspectRatio>
+        <div className="flex flex-col gap-8">
+          <AspectRatio ratio={16 / 9} className="w-full">
+            <iframe
+              src={`https://www.youtube.com/embed/${YOUTUBE_ID_1}`}
+              title="Grabación del partido - Primer tiempo"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            />
+          </AspectRatio>
+
+          <AspectRatio ratio={16 / 9} className="w-full">
+            <iframe
+              src={`https://www.youtube.com/embed/${YOUTUBE_ID_2}`}
+              title="Grabación del partido - Segundo tiempo"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            />
+          </AspectRatio>
+        </div>
       </div>
     </section>
   )
