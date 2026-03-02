@@ -4,6 +4,7 @@ import { Ticker } from "@/components/sections/ticker"
 import { About } from "@/components/sections/about"
 import { Players } from "@/components/sections/players"
 import { Fixture } from "@/components/sections/fixture"
+import { Video } from "@/components/sections/video"
 {/*import { Results } from "@/components/sections/results"*/}
 {/*import { News } from "@/components/sections/news"*/}
 import { Sponsors } from "@/components/sections/sponsors"
@@ -35,6 +36,7 @@ export default function Home() {
       </div>
 
       <Fixture />
+      <Video />
 
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="h-px bg-gradient-to-r from-transparent via-yellow/30 to-transparent" />

@@ -45,7 +45,7 @@ function Countdown({ targetDate }: { targetDate: Date }) {
 }
 
 export function Hero() {
-  const nextMatchDate = new Date("2026-02-28T13:15:00")
+  const nextMatchDate = new Date("2026-03-07T13:15:00")
 
   const handleScroll = (href: string) => {
     const el = document.querySelector(href)
@@ -154,17 +154,17 @@ export function Hero() {
             </div>
             <span className="font-display text-xl text-yellow">VS</span>
             <div className="text-right">
-              <p className="font-display text-2xl tracking-wider text-foreground">CHERNOBYL</p>
+              <p className="font-display text-2xl tracking-wider text-foreground">PELUSA</p>
               <p className="text-xs text-muted-foreground">Visitante</p>
             </div>
           </div>
           <div className="mb-4 flex items-center justify-center gap-4 text-xs text-muted-foreground">
             <span className="flex items-center gap-1">
-              <CalendarDays className="h-3 w-3" /> 28 Feb 2026
+              <CalendarDays className="h-3 w-3" /> 07 Mar 2026
             </span>
-            <span>13:15 hs</span>
+            <span>--:-- hs</span>
             <span className="flex items-center gap-1">
-              <MapPin className="h-3 w-3" /> Cancha 2 - Jockey
+              <MapPin className="h-3 w-3" /> Cancha - - -
             </span>
           </div>
           <Countdown targetDate={nextMatchDate} />
