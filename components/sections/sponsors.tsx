@@ -51,8 +51,8 @@ export function Sponsors() {
     }
   }
 
-  const actuales = sponsors.filter((s) => [1, 2, 6, 17, 18].includes(s.id))
-  const anteriores = sponsors.filter((s) => ![1, 2, 6, 17, 18].includes(s.id))
+  const actuales = sponsors.filter((s) => [1, 2, 17, 18, 19,20].includes(s.id))
+  const anteriores = sponsors.filter((s) => ![1, 2, 17, 18, 19,20].includes(s.id))
 
   return (
     <section id="sponsors" className="relative overflow-hidden py-20 lg:py-32">

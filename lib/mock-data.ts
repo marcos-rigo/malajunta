@@ -560,6 +560,18 @@ export const sponsors: Sponsor[] = [
     logo: "/images/sponsors/piston.png",
     tier: "Principal",
   },
+  {
+    id: 19,
+    name: "Irene Sosa Gonzalez - Estética Boutique",
+    logo: "/images/sponsors/irene.svg",
+    tier: "Principal",
+  },
+  {
+    id: 20,
+    name: "Magali Frutas - Anfami SRL",
+    logo: "/images/sponsors/magali.svg",
+    tier: "Principal",
+  },
 ]
 
 // ---------- GALLERY ----------
