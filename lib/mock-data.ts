@@ -297,10 +297,10 @@ export const fixture: FixtureMatch[] = [
   {
     id: 2,
     date: "2026-03-07",
-    time: "A confirmar",
+    time: "12:30",
     rival: "Pelusa",
     condition: "Local",
-    venue: "A confirmar",
+    venue: "N° 1 - Predio Perón",
     status: "Proximo",
     month: "Marzo",
   },

@@ -45,7 +45,7 @@ function Countdown({ targetDate }: { targetDate: Date }) {
 }
 
 export function Hero() {
-  const nextMatchDate = new Date("2026-03-07T13:15:00")
+  const nextMatchDate = new Date("2026-03-07T12:30:00")
 
   const handleScroll = (href: string) => {
     const el = document.querySelector(href)
@@ -162,9 +162,9 @@ export function Hero() {
             <span className="flex items-center gap-1">
               <CalendarDays className="h-3 w-3" /> 07 Mar 2026
             </span>
-            <span>--:-- hs</span>
+            <span>12:30 hs</span>
             <span className="flex items-center gap-1">
-              <MapPin className="h-3 w-3" /> Cancha - - -
+              <MapPin className="h-3 w-3" /> Cancha N° 1 - Predio Perón
             </span>
           </div>
           <Countdown targetDate={nextMatchDate} />
