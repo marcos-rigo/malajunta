@@ -72,8 +72,8 @@ export default function Home() {
         <div className="h-px bg-gradient-to-r from-transparent via-neon/30 to-transparent" />
       </div>
 
-      {/*<Contact />*/}
-      {/*<Footer />*/}
+      {<Contact />}
+      {<Footer />}
     </main>
   )
 }

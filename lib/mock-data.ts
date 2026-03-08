@@ -592,6 +592,15 @@ export const socialPosts = [
     image: "/images/post/post2.png",
     url: "https://www.instagram.com/p/DVcTn90AMhP/",
   },
+  {
+    id: 3,
+    platform: "Instagram",
+    content: "La camiseta se defiende con el corazón y con la misma pasión de siempre. Por eso nos pone contentos anunciar que @moro.tuc renueva su vínculo con Mala Junta y seguirá siendo la indumentaria oficial del equipo. Gracias por acompañarnos en este camino y ser parte de nuestra historia. ¡Mala Junta Todo el Tiempo! ⚽🔥 #moro #indumentaria #malajunta #camiseta",
+    date: "2026-03-08",
+    likes: 0,
+    image: "/images/post/post3.png",
+    url: "https://www.instagram.com/p/DVfIsVPAAqE/",
+  },
 ]
 
 // ---------- SPONSORSHIP PACKAGES ----------
@@ -641,10 +650,8 @@ export const sponsorPackages = [
 export const navLinks = [
   { label: "Inicio", href: "#inicio" },
   { label: "Equipo", href: "#equipo" },
-  // { label: "Fixture", href: "#fixture" },
-  // { label: "Resultados", href: "#resultados" },
-  // { label: "Noticias", href: "#noticias" },
+  { label: "Fixture", href: "#fixture" },
+  { label: "Noticias", href: "#noticias" },
   { label: "Sponsors", href: "#sponsors" },
-  // { label: "Galeria", href: "#galeria" },
-  // { label: "Contacto", href: "#contacto" },
+  { label: "Redes", href: "#redes" },
 ]

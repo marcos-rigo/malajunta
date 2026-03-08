@@ -52,7 +52,7 @@ export function Social() {
         </div>
 
         {/* Mock posts */}
-        <div className="grid gap-6 md:grid-cols-2 max-w-3xl mx-auto">
+        <div className="grid gap-6 md:grid-cols-3">
           {socialPosts.map((post, i) => (
             <motion.div
               key={post.id}
