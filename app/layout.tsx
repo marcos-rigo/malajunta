@@ -40,6 +40,20 @@ export const metadata: Metadata = {
     title: 'Mala Junta FC',
     description: 'Futbol, Amistad y Competencia - Temporada 2026',
     type: 'website',
+    images: [
+      {
+        url: '/images/og-image.png',
+        width: 512,
+        height: 512,
+        alt: 'Mala Junta FC',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Mala Junta FC',
+    description: 'Futbol, Amistad y Competencia - Temporada 2026',
+    images: ['/images/og-image.png'],
   },
 }
 
