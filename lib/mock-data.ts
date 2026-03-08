@@ -654,4 +654,5 @@ export const navLinks = [
   { label: "Noticias", href: "#noticias" },
   { label: "Sponsors", href: "#sponsors" },
   { label: "Redes", href: "#redes" },
+  { label: "Contacto", href: "#contacto" },
 ]

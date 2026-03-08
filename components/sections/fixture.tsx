@@ -53,7 +53,8 @@ export function Fixture() {
         </motion.div>
 
         {/* Month filter */}
-        <div className="mb-10 flex items-center gap-2 overflow-x-auto pb-2 lg:flex-wrap lg:justify-center lg:overflow-visible lg:pb-0 scrollbar-none">
+        <div className="sticky top-16 z-30 mb-10 -mx-4 bg-background/95 px-4 py-3 backdrop-blur-sm lg:relative lg:top-auto lg:z-auto lg:mx-0 lg:bg-transparent lg:px-0 lg:py-0 lg:backdrop-blur-none">
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 lg:flex-wrap lg:justify-center lg:overflow-visible lg:pb-0 scrollbar-none">
           {months.map((m) => (
             <Button
               key={m}
@@ -69,6 +70,7 @@ export function Fixture() {
               {m.toUpperCase()}
             </Button>
           ))}
+        </div>
         </div>
 
         {/* Desktop Table */}
