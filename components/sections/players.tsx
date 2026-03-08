@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
-import { X, Target, Handshake, Star, Shield } from "lucide-react"
+import { X, Target, Star, Shield } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { players, type Player, type Position } from "@/lib/mock-data"
@@ -44,16 +44,15 @@ function PlayerCard({ player, onClick }: { player: Player; onClick: () => void }
           </Badge>
         </div>
       </div>
-      <div className="flex items-center justify-around border-t border-neon/10 p-3">
-        <div className="flex items-center gap-1 text-xs text-muted-foreground">
-          <Target className="h-3 w-3 text-neon" />
-          <span>{player.goals} goles</span>
+      {player.goals > 0 && (
+        <div className="flex items-center justify-center border-t border-neon/10 p-3">
+          <div className="flex items-center gap-1 text-xs text-muted-foreground">
+            <Target className="h-3 w-3 text-neon" />
+            <span className="font-display tracking-wider text-neon">{player.goals}</span>
+            <span>{player.goals === 1 ? "gol" : "goles"}</span>
+          </div>
         </div>
-        <div className="flex items-center gap-1 text-xs text-muted-foreground">
-          <Handshake className="h-3 w-3 text-yellow" />
-          <span>{player.assists} asist.</span>
-        </div>
-      </div>
+      )}
     </motion.div>
   )
 }
@@ -131,14 +130,10 @@ function PlayerModal({ player, onClose }: { player: Player; onClose: () => void 
             </div>
           </div>
 
-          <div className="flex justify-center gap-8 rounded-lg border border-neon/10 bg-card/80 p-4">
+          <div className="flex justify-center rounded-lg border border-neon/10 bg-card/80 p-4">
             <div className="text-center">
-              <span className="font-display text-2xl text-neon">{player.goals}</span>
+              <span className="font-display text-3xl text-neon">{player.goals}</span>
               <p className="text-xs text-muted-foreground">Goles</p>
-            </div>
-            <div className="text-center">
-              <span className="font-display text-2xl text-yellow">{player.assists}</span>
-              <p className="text-xs text-muted-foreground">Asistencias</p>
             </div>
           </div>
         </div>
