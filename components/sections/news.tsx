@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
-import { CalendarDays, X, ArrowRight } from "lucide-react"
+import { CalendarDays, X, ArrowRight, ExternalLink } from "lucide-react"
 import { news, type NewsItem } from "@/lib/mock-data"
 
 function NewsCard({ item, onClick }: { item: NewsItem; onClick: () => void }) {
@@ -21,12 +21,12 @@ function NewsCard({ item, onClick }: { item: NewsItem; onClick: () => void }) {
       onClick={onClick}
       className="group cursor-pointer overflow-hidden rounded-lg border border-neon/10 bg-card/50 transition-all duration-300 hover:border-neon/30 hover:shadow-[0_0_20px_rgba(32,224,0,0.1)]"
     >
-      <div className="relative aspect-video overflow-hidden">
+      <div className="relative aspect-video overflow-hidden bg-card">
         <Image
           src={item.image}
           alt={item.title}
           fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className={`transition-transform duration-500 group-hover:scale-105 ${item.image.includes("camiseta") ? "object-contain" : "object-cover"}`}
           sizes="(max-width: 768px) 100vw, 33vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-carbon/80 to-transparent" />
@@ -78,8 +78,8 @@ function NewsModal({ item, onClose }: { item: NewsItem; onClose: () => void }) {
         >
           <X className="h-5 w-5" />
         </button>
-        <div className="relative aspect-video">
-          <Image src={item.image} alt={item.title} fill className="object-cover" sizes="672px" />
+        <div className="relative aspect-video bg-card">
+          <Image src={item.image} alt={item.title} fill className={item.image.includes("camiseta") ? "object-contain" : "object-cover"} sizes="672px" />
           <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
         </div>
         <div className="p-6">
@@ -91,6 +91,39 @@ function NewsModal({ item, onClose }: { item: NewsItem; onClose: () => void }) {
             {item.title.toUpperCase()}
           </h2>
           <p className="leading-relaxed text-muted-foreground">{item.content}</p>
+
+          {/* Sponsors */}
+          {item.sponsors && item.sponsors.length > 0 && (
+            <div className="mt-8 border-t border-neon/10 pt-6">
+              <p className="mb-4 font-display text-xs tracking-[0.3em] text-neon/60">
+                NOS ACOMPAÑAN ESTA TEMPORADA
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {item.sponsors.map((sponsor) =>
+                  sponsor.url ? (
+                    <a
+                      key={sponsor.name}
+                      href={sponsor.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="group flex items-center gap-1.5 rounded-md border border-yellow/20 bg-yellow/5 px-3 py-2 text-xs text-yellow/80 transition-all hover:border-yellow/50 hover:bg-yellow/10 hover:text-yellow cursor-pointer"
+                    >
+                      <ExternalLink className="h-3 w-3 opacity-50 group-hover:opacity-100 shrink-0" />
+                      {sponsor.name}
+                    </a>
+                  ) : (
+                    <span
+                      key={sponsor.name}
+                      className="flex items-center gap-1.5 rounded-md border border-yellow/20 bg-yellow/5 px-3 py-2 text-xs text-yellow/80 transition-all hover:border-yellow/40 hover:bg-yellow/10 hover:text-yellow/90 cursor-default select-none"
+                    >
+                      {sponsor.name}
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
+          )}
         </div>
       </motion.div>
     </motion.div>
@@ -116,8 +149,8 @@ export function News() {
           <div className="mx-auto mt-4 h-1 w-20 bg-neon" />
         </motion.div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {news.slice(0, 6).map((item) => (
+        <div className="grid gap-6 md:grid-cols-2">
+          {news.slice(0, 2).map((item) => (
             <NewsCard key={item.id} item={item} onClick={() => setSelectedNews(item)} />
           ))}
         </div>

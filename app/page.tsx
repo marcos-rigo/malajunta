@@ -6,7 +6,7 @@ import { Players } from "@/components/sections/players"
 import { Fixture } from "@/components/sections/fixture"
 import { Video } from "@/components/sections/video"
 {/*import { Results } from "@/components/sections/results"*/}
-{/*import { News } from "@/components/sections/news"*/}
+import { News } from "@/components/sections/news"
 import { Sponsors } from "@/components/sections/sponsors"
 import { Gallery } from "@/components/sections/gallery"
 import { Social } from "@/components/sections/social"
@@ -48,7 +48,7 @@ export default function Home() {
         <div className="h-px bg-gradient-to-r from-transparent via-neon/30 to-transparent" />
       </div>
 
-      {/*<News />*/}
+      <News />
 
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="h-px bg-gradient-to-r from-transparent via-yellow/30 to-transparent" />

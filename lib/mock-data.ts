@@ -33,6 +33,11 @@ export interface FixtureMatch {
   month: string
 }
 
+export interface NewsSponsor {
+  name: string
+  url: string
+}
+
 export interface NewsItem {
   id: number
   title: string
@@ -40,6 +45,7 @@ export interface NewsItem {
   excerpt: string
   image: string
   content: string
+  sponsors?: NewsSponsor[]
 }
 
 export interface Sponsor {
@@ -296,7 +302,7 @@ export const fixture: FixtureMatch[] = [
   },
   {
     id: 2,
-    date: "2026-03-07",
+    date: "2026-03-14",
     time: "12:30",
     rival: "Pelusa",
     condition: "Local",
@@ -306,7 +312,7 @@ export const fixture: FixtureMatch[] = [
   },
   {
     id: 3,
-    date: "2026-03-14",
+    date: "2026-03-21",
     time: "A confirmar",
     rival: "Los Payitos",
     condition: "Local",
@@ -316,7 +322,7 @@ export const fixture: FixtureMatch[] = [
   },
   {
     id: 4,
-    date: "2026-03-21",
+    date: "2026-03-28",
     time: "A confirmar",
     rival: "Los Gallos",
     condition: "Local",
@@ -326,17 +332,17 @@ export const fixture: FixtureMatch[] = [
   },
   {
     id: 5,
-    date: "2026-03-28",
+    date: "2026-04-04",
     time: "A confirmar",
     rival: "Buenos Muchachos",
     condition: "Local",
     venue: "A confirmar",
     status: "Proximo",
-    month: "Marzo",
+    month: "Abril",
   },
   {
     id: 6,
-    date: "2026-04-04",
+    date: "2026-04-11",
     time: "A confirmar",
     rival: "Gorderos FC",
     condition: "Local",
@@ -346,7 +352,7 @@ export const fixture: FixtureMatch[] = [
   },
   {
     id: 7,
-    date: "2026-04-11",
+    date: "2026-04-18",
     time: "A confirmar",
     rival: "Fonden Blanken",
     condition: "Local",
@@ -356,7 +362,7 @@ export const fixture: FixtureMatch[] = [
   },
   {
     id: 8,
-    date: "2026-04-18",
+    date: "2026-04-25",
     time: "A confirmar",
     rival: "La Lesión",
     condition: "Local",
@@ -366,17 +372,17 @@ export const fixture: FixtureMatch[] = [
   },
   {
     id: 9,
-    date: "2026-04-25",
+    date: "2026-05-02",
     time: "A confirmar",
     rival: "Nante FC",
     condition: "Local",
     venue: "A confirmar",
     status: "Proximo",
-    month: "Abril",
+    month: "Mayo",
   },
   {
     id: 10,
-    date: "2026-05-02",
+    date: "2026-05-09",
     time: "A confirmar",
     rival: "El Zeta",
     condition: "Local",
@@ -386,7 +392,7 @@ export const fixture: FixtureMatch[] = [
   },
   {
     id: 11,
-    date: "2026-05-09",
+    date: "2026-05-16",
     time: "A confirmar",
     rival: "CA Machitulio",
     condition: "Local",
@@ -399,54 +405,33 @@ export const fixture: FixtureMatch[] = [
 // ---------- NEWS ----------
 export const news: NewsItem[] = [
   {
+    id: 0,
+    date: "2026-03-08",
+    title: "Ya llegó la nueva camiseta: Mala Junta presenta su uniforme para el Apertura 2026",
+    excerpt:
+      "Negra, con franja verde y detalles dorados. Así es la nueva indumentaria con la que Mala Junta disputará el Torneo Márathon Las Cañas Apertura 2026.",
+    image: "/images/noticias/camiseta.jpeg",
+    content:
+      "Mala Junta ya tiene camiseta nueva. El equipo presenta su uniforme oficial para el Apertura 2026, fabricado por Moro, con un diseño en negro con franja central verde texturada y detalles dorados que la hacen única. En el frente luce el escudo del club y el sponsor principal FV Group SRL. En la espalda, el número y el apodo del jugador bajo la marca Pistón Club Tucumán. Este lanzamiento no sería posible sin el apoyo de los sponsors que nos acompañan esta temporada.",
+    sponsors: [
+      { name: "Moro Indumentaria", url: "https://www.instagram.com/moro.tuc/" },
+      { name: "Irene Sosa Gonzalez - Estética Boutique", url: "https://www.instagram.com/irenesosagonzalez/" },
+      { name: "FV Group SRL - Muebles a medida", url: "https://www.instagram.com/fvgroup.tuc/" },
+      { name: "Pistón Club Tucumán", url: "https://www.instagram.com/piston.club.tucuman/" },
+      { name: "Tucumán Aventura", url: "https://www.instagram.com/tucuman.aventuras_smt/" },
+      { name: "Educación 24", url: "https://www.instagram.com/educacion24ok/" },
+      { name: "Frutas Magalí - Anfami SRL", url: "" },
+    ],
+  },
+  {
     id: 1,
-    title: "Renovacion Cucho: Emilio Jimenez sigue en Mala Junta",
-    date: "2026-02-09",
+    date: "2026-02-27",
+    title: "Victoria en el debut: Mala Junta 5-2 Chernobyl",
     excerpt:
-      "El goleador del equipo confirmo su continuidad para la temporada 2026. Cucho es pieza clave del proyecto.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-02-09%20at%2023.30.08-x3xdtrHvdbBf9EihVXIaK1HYJqPGjQ.jpeg",
+      "Un partido físico y peleado, pero Mala Junta se lo llevó con autoridad. Los refuerzos de la temporada fueron los grandes protagonistas del triunfo.",
+    image: "/images/noticias/victoria.jpeg",
     content:
-      "Emilio 'Cucho' Jimenez, goleador historico de Mala Junta, renueva su compromiso con el equipo para la temporada 2026. Con 12 goles en la temporada pasada, Cucho es la referencia ofensiva del equipo y una pieza fundamental en la busqueda de nuevos titulos. 'Mala Junta es mi casa, aca encontre mucho mas que futbol', declaro el delantero.",
-  },
-  {
-    id: 2,
-    title: "Victoria contundente: Mala Junta 4-0 Real Tucuman",
-    date: "2026-02-02",
-    excerpt:
-      "Goleada historica en la Cancha El Bajo. El equipo demostro un nivel superlativo ante un rival directo.",
-    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&h=400&fit=crop",
-    content:
-      "Con una actuacion demoledora, Mala Junta goleo 4-0 a Real Tucuman en un partido que sera recordado por mucho tiempo. Cucho abrio el marcador a los 15 minutos, y Dieguito amplio antes del descanso. En el segundo tiempo, el equipo no bajo la intensidad y sello la goleada con goles de Cucho y Nico.",
-  },
-  {
-    id: 3,
-    title: "Pretemporada 2026: mas preparados que nunca",
-    date: "2026-01-15",
-    excerpt:
-      "El plantel completo trabajo durante 3 semanas de pretemporada intensiva con nuevo preparador fisico.",
-    image: "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600&h=400&fit=crop",
-    content:
-      "Con la incorporacion de un preparador fisico dedicado, Mala Junta encaro una pretemporada de tres semanas con doble turno. El objetivo: llegar en optima forma al inicio de la liga y competir hasta el final. Los jugadores mostraron compromiso total y el cuerpo tecnico quedo conforme con el rendimiento general.",
-  },
-  {
-    id: 4,
-    title: "Nuevos sponsors se suman al proyecto Mala Junta",
-    date: "2026-01-10",
-    excerpt:
-      "Tres nuevas marcas locales se incorporan como sponsors del equipo para la temporada 2026.",
-    image: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=600&h=400&fit=crop",
-    content:
-      "El crecimiento de Mala Junta no se detiene. Tres nuevas empresas locales se sumaron como sponsors para la temporada 2026, fortaleciendo el proyecto deportivo y la presencia del equipo en la comunidad tucumana. Los acuerdos incluyen visibilidad en indumentaria, redes sociales y activaciones en los dias de partido.",
-  },
-  {
-    id: 5,
-    title: "Mala Junta suma 3 refuerzos para la temporada",
-    date: "2026-01-05",
-    excerpt:
-      "Tres jugadores con experiencia en ligas regionales refuerzan el plantel para competir en todos los frentes.",
-    image: "https://images.unsplash.com/photo-1551958219-acbc608c6377?w=600&h=400&fit=crop",
-    content:
-      "Con la mira puesta en ser protagonista, Mala Junta incorporo tres jugadores con experiencia en ligas regionales. Las nuevas incorporaciones llegan para aportar profundidad al plantel y elevar la competencia interna. El DT se mostro entusiasmado con las opciones que tendra disponibles desde la primera fecha.",
+      "Debut soñado para Mala Junta en el Apertura 2026. En un partido físico, intenso y peleado de principio a fin, el equipo se impuso 5 a 2 ante Chernobyl y arrancó la temporada con el pie derecho. El encuentro fue disputado, con un rival que no regaló nada, pero la calidad y la profundidad del plantel terminaron siendo determinantes. Los grandes protagonistas fueron los refuerzos de esta temporada: Fabricio Pistolesi y Juan Narváez anotaron uno cada uno, Nicolás Chain sumó el suyo, y Ramiro Sáez fue la figura con un doblete que selló la goleada. Una victoria que ilusiona y que muestra el potencial de este Mala Junta 2026.",
   },
 ]
 
@@ -589,7 +574,7 @@ export const gallery: GalleryImage[] = [
 // ---------- SOCIAL POSTS (mock) ----------
 // ✏️ ACTUALIZAR: cambiar image y content cuando publiques algo nuevo (fecha y likes eliminados)
 export const socialPosts = [
- {
+  {
     id: 1,
     platform: "Instagram",
     content: "Lista de Buena Fe confirmada! Plantel F7 +30 para el Apertura 26. Vamos Mala Junta!",
@@ -598,7 +583,15 @@ export const socialPosts = [
     image: "/images/post/post1.jpeg",
     url: "https://www.instagram.com/p/DVNNd88gJ9C/",
   },
-
+  {
+    id: 2,
+    platform: "Instagram",
+    content: "Desde Mala Junta queremos agradecer a nuestros nuevos sponsors por confiar en este proyecto deportivo. Su apoyo es fundamental para seguir creciendo dentro y fuera de la cancha. ¡Vamos por un gran año juntos! @fvgroup.tuc @irenesosagonzalez @piston.club.tucuman @tucuman.aventuras_smt @educacion24ok #FrutasMagali #malajunta #lascañas #sponsors",
+    date: "2026-03-08",
+    likes: 0,
+    image: "/images/post/post2.png",
+    url: "https://www.instagram.com/p/DVcTn90AMhP/",
+  },
 ]
 
 // ---------- SPONSORSHIP PACKAGES ----------

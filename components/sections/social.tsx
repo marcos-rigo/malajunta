@@ -52,7 +52,7 @@ export function Social() {
         </div>
 
         {/* Mock posts */}
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 max-w-3xl mx-auto">
           {socialPosts.map((post, i) => (
             <motion.div
               key={post.id}
@@ -79,7 +79,7 @@ export function Social() {
                   {post.content}
                 </p>
                 <div className="flex items-center justify-end">
-                  <a href="https://www.instagram.com/p/DVNNd88gJ9C/" className="flex items-center gap-1 text-xs text-neon transition-colors hover:text-neon-dark" target="_blank">
+                  <a href={post.url} className="flex items-center gap-1 text-xs text-neon transition-colors hover:text-neon-dark" target="_blank">
                     Ver post <ExternalLink className="h-3 w-3" />
                   </a>
                 </div>
