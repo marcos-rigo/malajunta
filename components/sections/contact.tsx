@@ -2,49 +2,28 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { Send, Phone, Mail, MapPin } from "lucide-react"
+import { Send, Phone, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { toast } from "sonner"
 
 export function Contact() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "General",
-    message: "",
-  })
+  const [formData, setFormData] = useState({ name: "", message: "" })
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    if (!formData.name || !formData.message) return
 
-    if (!formData.name || !formData.email || !formData.message) {
-      toast.error("Por favor completa los campos obligatorios.")
-      return
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(formData.email)) {
-      toast.error("Por favor ingresa un email valido.")
-      return
-    }
-
-    setIsSubmitting(true)
-    // Simulate submit
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    toast.success("Mensaje enviado correctamente. Te responderemos a la brevedad!")
-    setFormData({ name: "", email: "", phone: "", subject: "General", message: "" })
-    setIsSubmitting(false)
+    const text = `Hola! Soy *${formData.name}* y les escribo desde la web de Mala Junta FC.%0A%0A${encodeURIComponent(formData.message)}`
+    window.open(`https://wa.me/5491133159693?text=${text}`, "_blank")
+    setFormData({ name: "", message: "" })
   }
 
   return (
@@ -88,54 +67,6 @@ export function Contact() {
             </div>
 
             <div>
-              <Label htmlFor="email" className="mb-1.5 block font-display text-xs tracking-[0.2em] text-foreground">
-                EMAIL *
-              </Label>
-              <Input
-                id="email"
-                name="email"
-                type="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="tu@email.com"
-                className="border-neon/20 bg-card/50 text-foreground placeholder:text-muted-foreground focus:border-neon"
-                required
-              />
-            </div>
-
-            <div>
-              <Label htmlFor="phone" className="mb-1.5 block font-display text-xs tracking-[0.2em] text-foreground">
-                TELEFONO
-              </Label>
-              <Input
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="+54 381 ..."
-                className="border-neon/20 bg-card/50 text-foreground placeholder:text-muted-foreground focus:border-neon"
-              />
-            </div>
-
-            <div>
-              <Label htmlFor="subject" className="mb-1.5 block font-display text-xs tracking-[0.2em] text-foreground">
-                MOTIVO
-              </Label>
-              <select
-                id="subject"
-                name="subject"
-                data-contact-subject=""
-                value={formData.subject}
-                onChange={handleChange}
-                className="flex h-10 w-full rounded-md border border-neon/20 bg-card/50 px-3 py-2 text-sm text-foreground ring-offset-background focus:border-neon focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-              >
-                <option value="General">General</option>
-                <option value="Patrocinio">Patrocinio</option>
-                <option value="Prensa">Prensa</option>
-              </select>
-            </div>
-
-            <div>
               <Label htmlFor="message" className="mb-1.5 block font-display text-xs tracking-[0.2em] text-foreground">
                 MENSAJE *
               </Label>
@@ -144,8 +75,8 @@ export function Contact() {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Tu mensaje..."
-                rows={5}
+                placeholder="¿En qué podemos ayudarte?"
+                rows={6}
                 className="border-neon/20 bg-card/50 text-foreground placeholder:text-muted-foreground focus:border-neon"
                 required
               />
@@ -153,17 +84,11 @@ export function Contact() {
 
             <Button
               type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-neon text-carbon font-display text-lg tracking-wider hover:bg-neon-dark glow-green disabled:opacity-50"
+              disabled={!formData.name || !formData.message}
+              className="w-full bg-neon text-carbon font-display text-lg tracking-wider hover:bg-neon-dark glow-green disabled:opacity-40 disabled:cursor-not-allowed"
               size="lg"
             >
-              {isSubmitting ? (
-                "ENVIANDO..."
-              ) : (
-                <>
-                  ENVIAR MENSAJE <Send className="ml-2 h-4 w-4" />
-                </>
-              )}
+              ENVIAR POR WHATSAPP <Send className="ml-2 h-4 w-4" />
             </Button>
           </motion.form>
 
@@ -185,41 +110,34 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground">WhatsApp</p>
-                    <p className="text-foreground">+54 381 XXX XXXX</p>
+                    <a href="https://wa.me/5491133159693" target="_blank" rel="noopener noreferrer" className="text-foreground transition-colors hover:text-neon">+54 9 11 3315-9693</a>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-neon/10">
-                    <Mail className="h-5 w-5 text-neon" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground">Email</p>
-                    <p className="text-foreground">contacto@malajuntafc.com</p>
-                  </div>
-                </div>
+
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-neon/10">
                     <MapPin className="h-5 w-5 text-neon" />
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground">Sede / Cancha</p>
-                    <p className="text-foreground">Cancha El Bajo — Tucuman, Argentina</p>
+                    <p className="text-foreground">Las Cañas Fútbol — Tucumán, Argentina</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Map placeholder */}
-            <div className="flex-1 overflow-hidden rounded-lg border border-neon/10 bg-card/50">
-              <div className="flex h-full min-h-[250px] items-center justify-center bg-gradient-to-br from-card to-secondary">
-                <div className="text-center">
-                  <MapPin className="mx-auto mb-3 h-10 w-10 text-neon/40" />
-                  <p className="font-display text-sm tracking-wider text-muted-foreground">
-                    CANCHA EL BAJO
-                  </p>
-                  <p className="text-xs text-muted-foreground">Tucuman, Argentina</p>
-                </div>
-              </div>
+            {/* Map */}
+            <div className="flex-1 overflow-hidden rounded-lg border border-neon/10">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3561.1808371994643!2d-65.27746512558353!3d-26.802369988600578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225d3619ddfe27%3A0x51721a7af1fcdb93!2sLas%20Ca%C3%B1as%20Futbol!5e0!3m2!1ses!2sar!4v1772991841797!5m2!1ses!2sar"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full"
+              />
             </div>
           </motion.div>
         </div>

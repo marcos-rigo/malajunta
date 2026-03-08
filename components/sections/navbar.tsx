@@ -10,8 +10,6 @@ import Image from "next/image"
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [showSponsorModal, setShowSponsorModal] = useState(false)
-
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
     window.addEventListener("scroll", handleScroll)
@@ -71,12 +69,15 @@ export function Navbar() {
               {link.label.toUpperCase()}
             </a>
           ))}
-          <Button
-            onClick={() => setShowSponsorModal(true)}
-            className="bg-neon text-carbon font-display tracking-wider hover:bg-neon-dark"
+          <a
+            href="https://wa.me/5491133159693"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            QUIERO SER SPONSOR
-          </Button>
+            <Button className="bg-neon text-carbon font-display tracking-wider hover:bg-neon-dark">
+              CONTACTO
+            </Button>
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -115,33 +116,21 @@ export function Navbar() {
                   {link.label.toUpperCase()}
                 </motion.a>
               ))}
-              <Button
-                onClick={() => setShowSponsorModal(true)}
-                className="mt-3 bg-neon text-carbon font-display tracking-wider hover:bg-neon-dark"
+              <a
+                href="https://wa.me/5491133159693"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                QUIERO SER SPONSOR
-              </Button>
+                <Button className="mt-3 w-full bg-neon text-carbon font-display tracking-wider hover:bg-neon-dark">
+                  CONTACTO
+                </Button>
+              </a>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
     </nav>
 
-      {/* Sponsor modal */}
-      {showSponsorModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-          <div className="rounded-lg bg-card p-6 text-center shadow-lg">
-            <h3 className="mb-4 text-xl font-display">Quiero ser sponsor</h3>
-            <p className="mb-6 text-lg">Contáctanos al <strong>3814163584</strong></p>
-            <Button
-              onClick={() => setShowSponsorModal(false)}
-              className="bg-neon text-carbon font-display tracking-wider hover:bg-neon-dark"
-            >
-              CERRAR
-            </Button>
-          </div>
-        </div>
-      )}
     </>
   )
 }

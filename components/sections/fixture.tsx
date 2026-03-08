@@ -53,7 +53,7 @@ export function Fixture() {
         </motion.div>
 
         {/* Month filter */}
-        <div className="mb-10 flex flex-wrap items-center justify-center gap-2">
+        <div className="mb-10 flex items-center gap-2 overflow-x-auto pb-2 lg:flex-wrap lg:justify-center lg:overflow-visible lg:pb-0 scrollbar-none">
           {months.map((m) => (
             <Button
               key={m}
@@ -62,8 +62,8 @@ export function Fixture() {
               onClick={() => setMonthFilter(m)}
               className={
                 monthFilter === m
-                  ? "bg-neon text-carbon font-display tracking-wider hover:bg-neon-dark"
-                  : "border-neon/20 text-muted-foreground font-display tracking-wider hover:border-neon/40 hover:text-neon"
+                  ? "bg-neon text-carbon font-display tracking-wider hover:bg-neon-dark shrink-0"
+                  : "border-neon/20 text-muted-foreground font-display tracking-wider hover:border-neon/40 hover:text-neon shrink-0"
               }
             >
               {m.toUpperCase()}
@@ -152,7 +152,7 @@ export function Fixture() {
         </div>
 
         {/* Mobile Cards */}
-        <div className="flex flex-col gap-4 lg:hidden">
+        <div key={monthFilter} className="flex flex-col gap-4 lg:hidden">
           {filteredMatches.map((match, i) => (
             <motion.div
               key={match.id}
