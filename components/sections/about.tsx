@@ -66,7 +66,7 @@ export function About() {
         {/* Institutional text */}
         <AnimatedSection className="mx-auto mb-20 max-w-3xl space-y-6 text-center">
           <p className="text-lg leading-relaxed text-muted-foreground">
-            Mala Junta naciÓ como un grupo de amigos con una pasióen común: el fútbol. Con el
+            Mala Junta nació como un grupo de amigos con una pasióen común: el fútbol. Con el
             tiempo, esa pasión se convirtió en un proyecto deportivo sólido, con identidad propia,
             valores claros y una comunidad que crece partido a partido.
           </p>
