@@ -53,6 +53,7 @@ export interface Sponsor {
   name: string
   logo: string
   tier: "Principal" | "Sponsor" | "Partner"
+  url?: string
 }
 
 export interface GalleryImage {
@@ -187,7 +188,7 @@ export const players: Player[] = [
   nickname: "Jorjinho",
   position: "Mediocampista",
   number: 10,
-  goals: 0,
+  goals: 1,
   assists: 0,
   image: "/images/jugadores/13.jpeg",
   bio: "Mediocampista de gran técnica y visión. Rápido, fuerte en el uno contra uno y con llegada al gol. Ordena el juego ofensivo del equipo y aporta claridad en los momentos clave.",
@@ -238,7 +239,7 @@ export const players: Player[] = [
   nickname: "Pollo",
   position: "Delantero",
   number: 16,
-  goals: 2,
+  goals: 1,
   assists: 0,
   image: "/images/jugadores/9.jpeg",
   bio: "Mediocampista dinámico y creativo. Destaca por su velocidad, capacidad de llegada al gol y recursos técnicos que aportan fantasía al juego. Siempre dispuesto a intentar jugadas diferentes que rompan líneas.",
@@ -431,7 +432,7 @@ export const news: NewsItem[] = [
       "Un partido físico y peleado, pero Mala Junta se lo llevó con autoridad. Los refuerzos de la temporada fueron los grandes protagonistas del triunfo.",
     image: "/images/noticias/victoria.jpeg",
     content:
-      "Debut soñado para Mala Junta en el Apertura 2026. En un partido físico, intenso y peleado de principio a fin, el equipo se impuso 5 a 2 ante Chernobyl y arrancó la temporada con el pie derecho. El encuentro fue disputado, con un rival que no regaló nada, pero la calidad y la profundidad del plantel terminaron siendo determinantes. Los grandes protagonistas fueron los refuerzos de esta temporada: Fabricio Pistolesi y Juan Narváez anotaron uno cada uno, Nicolás Chain sumó el suyo, y Ramiro Sáez fue la figura con un doblete que selló la goleada. Una victoria que ilusiona y que muestra el potencial de este Mala Junta 2026.",
+      "Debut soñado para Mala Junta en el Apertura 2026. En un partido físico, intenso y peleado de principio a fin, el equipo se impuso 5 a 2 ante Chernobyl y arrancó la temporada con el pie derecho. El encuentro fue disputado, con un rival que no regaló nada, pero la calidad y la profundidad del plantel terminaron siendo determinantes. Los grandes protagonistas fueron los refuerzos de esta temporada: Fabricio Pistolesi, Juan Narváez y Nicolás Chain anotaron uno cada uno, Ramiro Sáez sumó el suyo, y Jorge Salles cerró la cuenta con un tanto que selló la goleada. Una victoria que ilusiona y que muestra el potencial de este Mala Junta 2026.",
   },
 ]
 
@@ -442,12 +443,14 @@ export const sponsors: Sponsor[] = [
     name: "Educación 24",
     logo: "/images/sponsors/e24.png",
     tier: "Principal",
+    url: "https://www.instagram.com/educacion24ok/",
   },
   {
     id: 2,
     name: "FV Group SRL",
     logo: "/images/sponsors/fv-blanco-01.png",
     tier: "Principal",
+    url: "https://www.instagram.com/fvgroup.tuc/",
   },
   {
     id: 3,
@@ -538,24 +541,28 @@ export const sponsors: Sponsor[] = [
     name: "Tucumán Aventura",
     logo: "/images/sponsors/tucumana.png",
     tier: "Principal",
+    url: "https://www.instagram.com/tucuman.aventuras_smt/",
   },
   {
     id: 18,
     name: "Pistón Club Tucumán",
     logo: "/images/sponsors/piston.png",
     tier: "Principal",
+    url: "https://www.instagram.com/piston.club.tucuman/",
   },
   {
     id: 19,
     name: "Irene Sosa Gonzalez - Estética Boutique",
     logo: "/images/sponsors/irene.svg",
     tier: "Principal",
+    url: "https://www.instagram.com/irenesosagonzalez/",
   },
   {
     id: 20,
     name: "Magali Frutas - Anfami SRL",
     logo: "/images/sponsors/magali.svg",
     tier: "Principal",
+    
   },
 ]
 

@@ -8,10 +8,13 @@ import { Badge } from "@/components/ui/badge"
 import { sponsors, sponsorPackages } from "@/lib/mock-data"
 
 function SponsorLogo({ sponsor }: { sponsor: (typeof sponsors)[0] }) {
-  return (
+  const content = (
     <motion.div
       whileHover={{ scale: 1.05 }}
-      className="flex flex-col items-center justify-center gap-3 rounded-xl border border-white/10 bg-white/[0.06] p-6 backdrop-blur-sm transition-all duration-300 hover:border-neon/30 hover:bg-white/[0.10] hover:shadow-[0_0_24px_rgba(32,224,0,0.12)]"
+      className={[
+        "flex flex-col items-center justify-center gap-3 rounded-xl border border-white/10 bg-white/[0.06] p-6 backdrop-blur-sm transition-all duration-300 hover:border-neon/30 hover:bg-white/[0.10] hover:shadow-[0_0_24px_rgba(32,224,0,0.12)]",
+        sponsor.url ? "cursor-pointer" : "",
+      ].join(" ")}
     >
       <div className="relative h-12 w-24">
         <Image
@@ -32,6 +35,16 @@ function SponsorLogo({ sponsor }: { sponsor: (typeof sponsors)[0] }) {
       </span>
     </motion.div>
   )
+
+  if (sponsor.url) {
+    return (
+      <a href={sponsor.url} target="_blank" rel="noopener noreferrer">
+        {content}
+      </a>
+    )
+  }
+
+  return content
 }
 
 export function Sponsors() {
