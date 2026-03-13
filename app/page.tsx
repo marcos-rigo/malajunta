@@ -36,7 +36,7 @@ export default function Home() {
       </div>
 
       <Fixture />
-      <Video />
+      
 
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="h-px bg-gradient-to-r from-transparent via-yellow/30 to-transparent" />
