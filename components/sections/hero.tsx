@@ -45,7 +45,7 @@ function Countdown({ targetDate }: { targetDate: Date }) {
 }
 
 export function Hero() {
-  const nextMatchDate = new Date("2026-03-28T14:30:00") // Partido este sábado 28 de marzo
+  const nextMatchDate = new Date("2026-04-25T12:00:00")
 
   const handleScroll = (href: string) => {
     const el = document.querySelector(href)
@@ -154,17 +154,17 @@ export function Hero() {
             </div>
             <span className="font-display text-xl text-yellow">VS</span>
             <div className="text-right">
-              <p className="font-display text-2xl tracking-wider text-foreground">LOS PAYITOS</p>
+              <p className="font-display text-2xl tracking-wider text-foreground">GORDEROS FC</p>
               <p className="text-xs text-muted-foreground">Visitante</p>
             </div>
           </div>
           <div className="mb-4 flex items-center justify-center gap-4 text-xs text-muted-foreground">
             <span className="flex items-center gap-1">
-              <CalendarDays className="h-3 w-3" /> 28 Mar 2026
+              <CalendarDays className="h-3 w-3" /> 25 Abr 2026
             </span>
-            <span>14:30 hs</span>
+            <span>12:00 hs</span>
             <span className="flex items-center gap-1">
-              <MapPin className="h-3 w-3" /> Cancha N° 4 - Predio La Perón
+              <MapPin className="h-3 w-3" /> Cancha N° 1 - Predio Jockey
             </span>
           </div>
           <Countdown targetDate={nextMatchDate} />

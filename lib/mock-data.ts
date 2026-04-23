@@ -356,10 +356,10 @@ export const fixture: FixtureMatch[] = [
   {
     id: 7,
     date: "2026-04-25",
-    time: "A confirmar",
-    rival: "Fonden Blanken",
+    time: "12:00",
+    rival: "Gorderos FC",
     condition: "Local",
-    venue: "A confirmar",
+    venue: "N° 1 - Predio Jockey",
     status: "Proximo",
     month: "Abril",
   },
